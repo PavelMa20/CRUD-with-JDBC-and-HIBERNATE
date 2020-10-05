@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet(urlPatterns = {"/insert"})
-public class AddServlet extends BaseServlet{
+public class AddServlet extends BaseServlet {
 
 
     @Override

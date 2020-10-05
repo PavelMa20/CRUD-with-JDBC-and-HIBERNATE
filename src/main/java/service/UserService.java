@@ -26,29 +26,30 @@ public class UserService {
 
 
     public void addUser(User user) throws DBException, SQLException {
-            userDaoImpl.addUser(user);
+        userDaoImpl.addUser(user);
     }
 
 
     public List<User> getAllUsers() throws DBException, SQLException {
-            return userDaoImpl.getAllUsers();
+        return userDaoImpl.getAllUsers();
     }
 
 
     public void deleteUser(User user) throws DBException, SQLException {
-            userDaoImpl.deleteUser(user);
+        userDaoImpl.deleteUser(user);
     }
 
 
     public void updateUser(User user) throws DBException, SQLException {
-            userDaoImpl.updateUser(user);
+        userDaoImpl.updateUser(user);
     }
 
 
     public User getUser(int id) throws DBException, SQLException {
-            return userDaoImpl.getUserById(id);
+        return userDaoImpl.getUserById(id);
     }
-    public void cleanUp()  {
+
+    public void cleanUp() {
         try {
             userDaoImpl.dropTable();
         } catch (SQLException e) {
@@ -56,7 +57,7 @@ public class UserService {
         }
     }
 
-    public void createTable()  {
+    public void createTable() {
         try {
             userDaoImpl.createTable();
         } catch (SQLException e) {

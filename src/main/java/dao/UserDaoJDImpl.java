@@ -4,7 +4,7 @@ package dao;
 import exception.DBException;
 import model.User;
 import util.DBHelper;
-import util.JDBCHelper;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class UserDaoJDImpl implements IUserDao {
 
     private Connection connection;
 
-    public UserDaoJDImpl() throws  DBException {
+    public UserDaoJDImpl() throws DBException {
 
         connection = DBHelper.getConnection();
     }
@@ -136,7 +136,7 @@ public class UserDaoJDImpl implements IUserDao {
             connection.setAutoCommit(false);
             try (ResultSet resultSet = statement.executeQuery("select * from clients")) {
                 while (resultSet.next()) {
-                    userList.add(new User(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("password"), resultSet.getString("login")));
+                    userList.add(new User(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("pasword"), resultSet.getString("login")));
                 }
                 connection.commit();
             }

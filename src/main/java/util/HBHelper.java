@@ -22,7 +22,6 @@ public class HBHelper {
 
     private static SessionFactory createSessionFactory(Configuration configuration) throws DBException {
         try {
-           // Configuration configuration = getMySqlConfiguration();
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
             builder.applySettings(configuration.getProperties());
             ServiceRegistry serviceRegistry = builder.build();
@@ -52,7 +51,7 @@ public class HBHelper {
 
 
             return configuration;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new DBException(e);
         }
     }

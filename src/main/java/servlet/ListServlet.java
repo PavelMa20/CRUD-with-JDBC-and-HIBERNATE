@@ -25,8 +25,9 @@ public class ListServlet extends BaseServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/userList.jsp");
         dispatcher.forward(request, response);
     }
+
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp)  {
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
         userService.createTable();
         resp.setStatus(200);
     }

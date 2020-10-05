@@ -50,7 +50,6 @@ public class UserDaoHBImpl implements IUserDao {
     public void addUser(User user) throws DBException {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
-
             Query query = session.createQuery("from User user where user.login =:login");
             query.setParameter("login", user.getLogin());
             List<User> users = query.list();
@@ -67,7 +66,7 @@ public class UserDaoHBImpl implements IUserDao {
     public void updateUser(User user) throws DBException {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
-             transaction = session.beginTransaction();
+            transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
         } catch (Exception e) {
@@ -80,7 +79,7 @@ public class UserDaoHBImpl implements IUserDao {
     public void deleteUser(User user) throws DBException {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
-             transaction = session.beginTransaction();
+            transaction = session.beginTransaction();
             session.delete(user);
             transaction.commit();
         } catch (Exception e) {
@@ -92,7 +91,6 @@ public class UserDaoHBImpl implements IUserDao {
     @Override
     public List<User> getAllUsers() throws DBException {
         try (Session session = sessionFactory.openSession()) {
-
             Query query = session.createQuery("FROM User");
             return query.list();
         } catch (Exception e) {

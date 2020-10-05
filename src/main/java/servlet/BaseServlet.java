@@ -3,7 +3,6 @@ package servlet;
 import exception.DBException;
 import service.UserService;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +23,7 @@ public abstract class BaseServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws  IOException {
+            throws IOException {
         try {
             doEX(request, response);
         } catch (Exception e) {
@@ -33,7 +32,7 @@ public abstract class BaseServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws  IOException {
+            throws IOException {
         try {
             doEX(request, response);
         } catch (Exception e) {
